@@ -20,7 +20,7 @@ void MenuState::tick() {
 	if(startButton->wasPressed()){
 		setNextState("Game");
 		setFinished(true);
-		music.load("music/Start-Up.wav");
+		music.load("music/Start-Up.mp3");
 		music.play();
 		std::this_thread::sleep_for(std::chrono::milliseconds(5000));
 
