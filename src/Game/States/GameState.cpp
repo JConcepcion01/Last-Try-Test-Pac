@@ -3,6 +3,7 @@
 
 GameState::GameState() {
 	music.load("music/PacManMatch.mp3");
+	music.play();
 	mapImage.load("images/map1.png");
 	map = MapBuilder().createMap(mapImage);
 }
@@ -16,7 +17,6 @@ void GameState::tick() {
 		map->getPlayer()->setScore(0);
 		GameState(); {
 		music.load("music/PacManMatch.mp3");
-		music.play();
 		mapImage.load("images/map1.png");
 		map = MapBuilder().createMap(mapImage);
 		}

@@ -3,6 +3,7 @@
 
 MsGameState::MsGameState() {
 	music.load("music/MsPacManMatch.mp3");
+	music.play();
 	mapImage.load("images/map1.png");
 	map = MsMapBuilder().createMap(mapImage);
 }
