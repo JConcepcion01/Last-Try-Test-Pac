@@ -29,7 +29,7 @@ void MsPauseState::keyPressed(int key){
     
 }
 void MsPauseState::reset(){
-    music.load("music/PauseSound.wav");
+    music.load("music/PauseSound.mp3");
     music.play();
     setFinished(false);
     setNextState("");

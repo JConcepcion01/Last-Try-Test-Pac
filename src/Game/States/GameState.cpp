@@ -2,14 +2,11 @@
 #include "Entity.h"
 
 GameState::GameState() {
-	music.load("music/PacManMatch.wav");
+	music.load("music/PacManMatch.mp3");
 	mapImage.load("images/map1.png");
 	map = MapBuilder().createMap(mapImage);
 }
 void GameState::tick() {
-	if(!music.isPlaying()){
-			music.play();
-	}
 	map->tick();
 	if(map->getPlayer()->getHealth() == 0){
 		setFinished(true);
@@ -18,7 +15,8 @@ void GameState::tick() {
 		finalScore = map->getPlayer()->getScore();
 		map->getPlayer()->setScore(0);
 		GameState(); {
-		music.load("music/PacManMatch.wav");
+		music.load("music/PacManMatch.mp3");
+		music.play();
 		mapImage.load("images/map1.png");
 		map = MapBuilder().createMap(mapImage);
 		}
