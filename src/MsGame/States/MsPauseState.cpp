@@ -1,7 +1,6 @@
 #include "MsPauseState.h"
 
 MsPauseState::MsPauseState(){
-    music.stop();
     resumeButton = new MsButton(ofGetWindowWidth()/2, ofGetWindowHeight()/2, 64, 50, "Resume");
     quitButton = new MsButton(ofGetWindowWidth()/2, ofGetWindowHeight()/2 + 60, 64, 50, "Quit");
 }
@@ -29,8 +28,8 @@ void MsPauseState::keyPressed(int key){
     
 }
 void MsPauseState::reset(){
-    music.load("music/PauseSound.wav");
-    music.play();
+    music.load("music/PauseSound.mp3");
+	music.play();
     setFinished(false);
     setNextState("");
     resumeButton->reset();

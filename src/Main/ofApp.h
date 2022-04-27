@@ -26,7 +26,7 @@ private:
 	MsGameOverState *msGameOverState;
 	MsGameState *msGameState;
 	MsPauseState *msPauseState;
-
+	ofSoundPlayer music;
 public:
 		void setup();
 		void update();

@@ -72,3 +72,22 @@ EntityManager::~EntityManager(){
     ghosts.clear();
     entities.clear();
 }
+
+bool EntityManager::getKillable(){
+
+    return killable;
+
+}
+/*
+int EntityManager::getXdot(){
+
+    return x; 
+
+}
+
+int EntityManager::getYdot(){
+
+    return y;
+    
+}
+*/

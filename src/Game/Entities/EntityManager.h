@@ -12,6 +12,9 @@ public:
 	void tick();
 	void render();
 	void setKillable(bool);
+	bool getKillable();
+	int getXdot();
+	int getYdot();
 
 private:
 	bool killable = false;

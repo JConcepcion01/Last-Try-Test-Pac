@@ -3,6 +3,8 @@
 #include "Animation.h"
 #include "EntityManager.h"
 #include "ChoosePlayerState.h"
+#include "DebuggPowerUp.h"
+#include "StrawberryPowerUp.h"
 
 enum MOVING {
 	MUP,
@@ -27,6 +29,8 @@ class Player: public Entity{
         Animation *walkLeft;
         Animation *walkRight;
         EntityManager* em;
+        DebuggPowerUp* fast;
+        StrawberryPU* Invincible;
         PlayerSelectState *loadImg;
 
     public:
@@ -48,5 +52,7 @@ class Player: public Entity{
         void checkCollisions();
         void die();
         int getDots();
+        bool getPassive();
+        void setPassive(bool);
 
 };

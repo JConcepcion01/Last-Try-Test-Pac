@@ -28,8 +28,6 @@ void PauseState::keyPressed(int key){
     
 }
 void PauseState::reset(){
-    music.load("music/PauseSound.wav");
-    music.play();
     setFinished(false);
     setNextState("");
     resumeButton->reset();

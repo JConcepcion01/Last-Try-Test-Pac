@@ -31,20 +31,31 @@ void ofApp::update(){
 				currentState = playerSelectState;
 			}else if(currentState->getNextState() == "Game"){
 				currentState = gameState;
+				music.load("music/PacManMatch.mp3");
+				music.play();	
 			}else if(currentState->getNextState() == "MsGame"){
 				currentState = msGameState;
+				music.load("music/MsPacManMatch.mp3");
+				music.play();
 			}else if(currentState->getNextState() == "Over"){
 				gameOverState->setScore(gameState->getFinalScore());
 				currentState = gameOverState;
+				music.unload();
 			}else if(currentState->getNextState() == "MsOver"){
 				msGameOverState->setMsScore(msGameState->getFinalMsScore());
 				currentState = msGameOverState;
+				music.unload();
 			}else if(currentState->getNextState() == "Win"){
 				currentState = winState;
+				music.unload();
 			}else if(currentState->getNextState() == "Pause"){
 				currentState = pauseState;
+				music.unload();
+				music.load("music/PauseSound.mp3");
+				music.play();
 			}else if(currentState->getNextState() == "MsPause"){
 				currentState = msPauseState;
+				music.unload();
 			}
 			currentState->reset();
 		}

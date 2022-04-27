@@ -2,7 +2,6 @@
 #include "Entity.h"
 
 GameState::GameState() {
-	music.load("music/PacManMatch.wav");
 	mapImage.load("images/map1.png");
 	map = MapBuilder().createMap(mapImage);
 }
@@ -18,7 +17,6 @@ void GameState::tick() {
 		finalScore = map->getPlayer()->getScore();
 		map->getPlayer()->setScore(0);
 		GameState(); {
-		music.load("music/PacManMatch.wav");
 		mapImage.load("images/map1.png");
 		map = MapBuilder().createMap(mapImage);
 		}
@@ -42,12 +40,10 @@ void GameState::keyPressed(int key){
 	map->keyPressed(key);
 	if (key == 'p'){
 		setFinished(true);
-		music.setPaused(true);
 		setNextState("Pause");
 	}
 	else if (key == 'y'){
 		setFinished(true);
-		music.setPaused(true);
 		setNextState("Win");
 		mapImage.load("images/map1.png");
 		map = MapBuilder().createMap(mapImage);
